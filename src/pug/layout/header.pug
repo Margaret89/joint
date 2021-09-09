@@ -1,4 +1,31 @@
 header.header
 	.container
 		.row
-			.col-12 header
+			.col-12
+				.header__content
+					.header__main
+						.header__logo
+							a(href="#")
+								img(src="assets/img/logo.png", alt="")
+
+						a.btn.btn_border(href='#')
+							span Наш магазин
+							+svg('ic-arrow','ic-arrow', '15', '15')
+
+						nav.top-menu
+							ul.top-menu__list
+								-
+									var list=[
+										{text:'О нас'},
+										{text:'Новости'},
+										{text:'Партнерам'},
+										{text:'Контакты'},
+									]
+								each item in list
+									li.top-menu__item
+										a(href="#").top-menu__link= item.text
+
+
+					a.btn.btn_border(href='#')
+						+svg('ic-login','ic-login', '22', '19')
+						span Войти

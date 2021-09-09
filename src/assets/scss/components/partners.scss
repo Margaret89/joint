@@ -1,0 +1,54 @@
+/*-------------- partners -----------------*/
+.partners{
+	background: #f5f5f5;
+	padding: 13px 0;
+}
+
+.partners-slider{
+	display: none;
+	margin-left: -5px;
+	margin-right: -5px;
+	position: relative;
+
+	&.slick-initialized{display: block;}
+	.slick-track{display: flex;}
+
+	.slick-slide{
+		height: auto;
+		margin: 0 5px;
+	}
+
+	.slick-slide > div{height: 100%;}
+
+	&__item{
+		display: flex!important;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		opacity: 0.6;
+		transition: opacity 0.2s ease 0s;
+	}
+
+	.btn-arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
+		border: 0;
+		font-size: 0;
+		padding: 0;
+		box-shadow:  none;
+		position: absolute;
+		@include top-center;
+		opacity: 0.4;
+		transition: opacity 0.2s ease 0s;
+		cursor: pointer;
+
+		&_left{left: -45px;}
+		&_right{right: -45px;}
+	}
+
+	.btn-arr:hover{opacity: 1;}
+}
+
+a.partners-slider__item:hover{opacity: 1;}

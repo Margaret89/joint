@@ -1,4 +1,22 @@
 footer.footer
 	.container
 		.row
-			.col-12 footer
+			.col-6
+				.footer__logo
+					a(href="#")
+						img(src="assets/img/logo-big.png", alt="")
+
+				.footer__copyright © Capital Dist, 2021
+
+			.col-4
+				ul.footer-menu
+					-
+						var list=[
+							{text:'О нас', status:'active'},
+							{text:'Партнерам'},
+							{text:'Новости'},
+							{text:'Контакты'},
+						]
+					each item in list
+						li.footer-menu__item(class=item.status?'active':'')
+							a(href="#").footer-menu__link= item.text

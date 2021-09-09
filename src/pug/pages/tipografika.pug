@@ -58,6 +58,25 @@ block content
 				br
 				div.h2 Кнопки
 				a.btn(href='#') Кнопка
+				br
+				br
+				a.btn.btn_border(href='#') Кнопка
+				br
+				br
+				a.btn.btn_border(href='#')
+					span Кнопка
+					+svg('ic-arrow','ic-arrow', '15', '15')
+				br
+				br
+				a.btn.btn_border(href='#')
+					+svg('ic-login','ic-login', '22', '19')
+					span Кнопка
+
+				br
+				br
+				div.h2 Фоны
+				.bg-grey(style="pading:20px") Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+
 
 				br
 				br
@@ -65,5 +84,20 @@ block content
 				.type-icon
 					.type-icon__item
 						.type-icon__img
-							+svg('ic-twitter','ic-twitter', '17', '14')
-						.type-icon__name ic-twitter
+							+svg('ic-arrow','ic-arrow', '15', '15')
+						.type-icon__name ic-arrow
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-login','ic-login', '22', '19')
+						.type-icon__name ic-login
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-left','ic-arrow-left', '22', '18')
+						.type-icon__name ic-arrow-left
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-right','ic-arrow-right', '22', '18')
+						.type-icon__name ic-arrow-right

@@ -75,7 +75,7 @@ h5,.h5{
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	width: 100vw;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -94,35 +94,48 @@ button.btn{
 	height: 6rem;
 	background: $color-blue;
 	border: 0;
-	@include font(normal, bold, 1.5rem, 1.2, $color-text);
+	@include font(normal, bold, 1.5rem, 1.2, #fff);
 	text-transform: uppercase;
 	text-decoration: none;
 	text-align: center;
 	padding: 0 30px;
 	cursor: pointer;
+	box-shadow: $color-blue 0 0px 0px 2px inset;
 	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 }
 
 .btn:hover,
 input[type="submit"].btn:hover,
 button.btn:hover{
-	color: rgba(255, 255, 255, 0.85);
+	color: #fff;
 	box-shadow: $color-dark-blue 0 0px 0px 40px inset;
 }
 
-// .btn_border,
-// input[type="submit"].btn_border,
-// button.btn_border{
-// 	background: transparent;
-// 	color: $color-text;
-// }
+.btn_border,
+input[type="submit"].btn_border,
+button.btn_border{
+	background: transparent;
+	color: $color-text;
 
-// .btn_border:hover,
-// input[type="submit"].btn_border:hover,
-// button.btn_border:hover{
-// 	background: $color-text;
-// 	color: #fff;
-// }
+	.icon{
+		fill: $color-text;
+		transition: fill 0.2s ease 0s;
+	}
+}
+
+.btn_border:hover,
+input[type="submit"].btn_border:hover,
+button.btn_border:hover{
+	color: #fff;
+	box-shadow: $color-blue 0 0px 0px 40px inset;
+
+	.icon{fill: #fff;}
+}
+
+.btn{
+	.icon:first-child{margin-right: 10px;}
+	.icon:last-child{margin-left: 10px;}
+}
 
 .code{
 	background-color: #f7f7f7;
@@ -140,3 +153,5 @@ button.btn:hover{
 .text-justify{text-align: justify !important;}
 .text-uppercase{text-transform: uppercase !important;}
 .text-bold {font-weight: 700 !important;}
+
+.bg-grey{background: #f5f5f5;}

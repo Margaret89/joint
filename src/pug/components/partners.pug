@@ -1,0 +1,27 @@
+.partners
+	.container
+		.row
+			.col-12
+				.partners-slider.js-partners-slider
+					-
+						var list=[
+							{img:'partner1.png'},
+							{img:'partner2.png'},
+							{img:'partner3.png'},
+							{img:'partner4.png'},
+							{img:'partner5.png'},
+							{img:'partner6.png'},
+							{img:'partner7.png'},
+							{img:'partner8.png'},
+							{img:'partner3.png'},
+							{img:'partner4.png'},
+							{img:'partner5.png'},
+							{img:'partner6.png'},
+							{img:'partner1.png'},
+							{img:'partner2.png'},
+							{img:'partner7.png'},
+							{img:'partner8.png'},
+						]
+					each item in list
+						a(href="#").partners-slider__item
+							img(src="assets/img/"+item.img, alt="")
