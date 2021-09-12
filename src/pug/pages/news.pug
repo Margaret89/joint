@@ -1,0 +1,55 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Новости';
+	- var h1 = 'Новости';
+
+block content
+	section.news-list
+		.container
+			.row
+				-
+					var list=[
+						{img:'news5.jpg', day:'6', date:'17.21', title:'Классика outdoor-снаряжения от Silva', text:'Может быть, вы смотрели на райдеров, совершающих прыжки и трюки, и мечтали сделать то же самое?'},
+						{img:'news6.jpg', day:'6', date:'17.21', title:'Как установить крепления на сноуборд', text:'Установить крепления на сноуборде проще, чем кажется, и для этого требуется всего несколько основных инструментов.'},
+						{img:'news7.jpg', day:'6', date:'17.21', title:'Что нужно делать, если попали в лавину', text:'Существует множество мифов о том, что делать, когда вы попали в лавину.'},
+						{img:'news8.jpg', day:'6', date:'17.21', title:'Что нужно делать, если попали в лавину', text:'Существует множество мифов о том, что делать, когда вы попали в лавину.'},
+						{img:'news9.jpg', day:'6', date:'17.21', title:'Как установить крепления на сноуборд', text:'Установить крепления на сноуборде проще, чем кажется, и для этого требуется всего несколько основных инструментов.'},
+						{img:'news10.jpg', day:'6', date:'17.21', title:'Классика outdoor-снаряжения от Silva', text:'Может быть, вы смотрели на райдеров, совершающих прыжки и трюки, и мечтали сделать то же самое?'},
+					]
+				each item in list
+					.col-md-6.col-lg-4
+						.news-item
+							.news-item__content
+								a(href="#").news-item__img-wrap
+									.news-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+									.news-item__date-wrap
+										.news-item__day= item.day
+										.news-item__date= item.date
+
+								.news-item__info
+									.news-item__title
+										a(href="#")= item.title
+
+									.news-item__text= item.text
+
+									a(href="#").news-item__more
+										+svg('ic-long-arrow','ic-long-arrow', '60', '14')
+
+			.row
+				.col-12
+					.pager
+						a.pager__nav.disable(href="#")
+							+svg('ic-arrow-left','ic-arrow-left', '22', '18')
+
+						a.pager__item.active(href='#') 1
+						a.pager__item(href='#') 2
+						a.pager__item(href='#') 3
+						a.pager__item(href='#') 4
+						a.pager__item(href='#') ...
+						a.pager__item(href='#') 12
+						a.pager__item(href='#') 13
+
+						a.pager__nav(href="#")
+							+svg('ic-arrow-right','ic-arrow-right', '22', '18')

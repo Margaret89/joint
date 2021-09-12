@@ -147,6 +147,32 @@
 	}
 
 	&__img-wrap:hover &__img{transform: translate(-50%, -50%) scale(1.05);}
+
+	&__text{
+		@include font(normal, normal, 1.6rem, 1.5, #757575);
+		margin-top: 6px;
+	}
+
+	&__more{
+		display: inline-flex;
+		vertical-align: top;
+		margin-top: 24px;
+		text-decoration: none;
+
+		.icon{
+			fill: $color-text;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__more:hover .icon{fill: $color-blue;}
+}
+
+.news-list{
+	.news-item{
+		margin-bottom: 60px;
+		&__img-wrap{padding-bottom: 63%;}
+	}
 }
 
 @media (max-width: 991px) {
