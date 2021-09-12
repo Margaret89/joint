@@ -1,0 +1,113 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Каталог';
+
+block content
+	section.catalog
+		.container
+			.row
+				.col-lg-3.col-xl-2
+					.filter
+						-
+							var list=[
+								{
+									title:'Выберите сезон',
+									sub:[
+										{text:'Сезон 19/20'},
+										{text:'Сезон 20/21', status:'active'},
+									]
+								},
+								{
+									title:'Выберите Бренд',
+									sub:[
+										{text:'Gloryfy'},
+										{text:'Oneskee', status:'active'},
+										{text:'Fix Binding'},
+										{text:'AirHole'},
+										{text:'Stance'},
+										{text:'686'},
+										{text:'Sorel'},
+									]
+								}
+							]
+						each item in list
+							.filter__sect
+								.filter__title= item.title
+
+								.filter__list
+									each sub in item.sub
+										.filter__item(class=sub.status?'active':'')
+											a(href="#").filter__link= sub.text
+
+				.col-lg-9.col-xl-10
+					.cat-list
+						.row
+							-
+								var list=[
+									{img:'cat-list1.jpg', label:'Сезон 20/21', title:'Очки gloryfy'},
+									{img:'cat-list2.jpg', label:'Сезон 19/20', title:'Зимняя одежда oneskee'},
+									{img:'cat-list3.jpg', label:'Сезон 19/20', title:'Fix Binding'},
+									{img:'cat-list4.jpg', label:'Сезон 20/21', title:'Сноуборды JOINT'},
+								]
+							each item in list
+								.col-md-6
+									.cat-item
+										.cat-item__content
+											a(href="#").cat-item__img-wrap
+												span.cat-item__img(style="background-image: url(assets/img/"+item.img+")")
+											
+											.cat-item__info
+												.cat-item__label= item.label
+												.cat-item__title
+													a(href="#")= item.title
+				
+										.cat-item__bottom
+											a(href="#").cat-item__link
+												.cat-item__link-icon
+												|Открыть в новом окне .pdf
+
+											a(href="#").cat-item__link
+												.cat-item__link-icon
+												|Скачать .pdf
+
+	section.about
+		.container
+			.row
+				.col-lg-8.offset-lg-2
+					.title-line
+						.h1 О нашей компании
+
+					p Группа компаний "КАНТ" включает одноименный спортивный комплекс, 20 спортивных магазинов, самую крупную дилерскую сеть в стране, горнолыжную школу "Нагорная", ресторан альпийской кухни "Шале", теннисные корты, тренажерный зал, батутный комплекс, пункт проката и сервис центр.
+
+			.about__img-wrap
+				.row
+					.col-md-6
+						.about__img
+							img(src="assets/img/about.jpg", alt="")
+
+					.col-md-6.col-lg-4
+						br
+						p У КАНТа 20 спортивных магазинов, которые специализируются на 6 видах спорта: горные лыжи, сноуборд, беговые лыжи, туризм, роликовые коньки и велоспорт.
+			
+			.row
+				.col-lg-8.offset-lg-2
+					p Сеть спортивных специализированных магазинов КАНТ отличает от других высокий профессионализм продавцов-консультантов, прошедших специальное обучение и специально подготовленных к каждой коллекции нового сезона, возможность приобрести в одном месте полный ассортимент правильно подобранной экипировки и наличие в магазинах лучшего горнолыжного и сноубордического оборудования.
+
+					p За много лет работы мы собрали под своими знамёнами ведущих производителей спортивного инвентаря, что позволяет удовлетворить запросы любого потребителя различных видов спорта, туризма и отдыха. 
+
+					a.btn.btn_border(href='#') Подробнее о нас
+
+					.title-line
+						.h1 Как стать партнером
+
+					p Группа компаний "КАНТ" включает одноименный спортивный комплекс, 20 спортивных магазинов, самую крупную дилерскую сеть в стране, горнолыжную школу "Нагорная", ресторан альпийской кухни "Шале", теннисные корты, тренажерный зал, батутный комплекс, пункт проката и сервис центр. 
+
+			.row
+				.col-lg-10.offset-lg-2
+					.about__img-full
+						img(src="assets/img/about2.png", alt="")
+			
+			.row
+				.col-lg-8.offset-lg-2
+					p За много лет работы мы собрали под своими знамёнами ведущих производителей спортивного инвентаря, что позволяет удовлетворить запросы любого потребителя различных видов спорта, туризма и отдыха.
