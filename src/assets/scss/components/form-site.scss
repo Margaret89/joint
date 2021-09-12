@@ -1,0 +1,110 @@
+/*-------------- form-site -----------------*/
+.form-site{
+	&__fields{
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	&__item{
+		width: calc(100% - 30px);
+		margin: 0 15px 26px;
+	}
+
+	&__item_half{width: calc(50% - 30px);}
+
+	&__title{
+		font-family: $font-organetto;
+		@include font(normal, bold, 3.2rem, 1.2, $color-text);
+		margin-bottom: 30px;
+	}
+
+	&__sect{margin-bottom: 26px;}
+
+	&__label{
+		@include font(normal, bold, 1.3rem, 1.2, $color-text);
+		text-transform: uppercase;
+		margin-bottom: 14px;
+	}
+
+	input[type="password"],
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	textarea{
+		display: inline-flex;
+		align-items: center;
+		height: 5.2rem;
+		width: 100%;
+		font-family: $font-site;
+		@include font(normal, normal, 1.5rem, 1.2, $color-text);
+		padding: 0 20px;
+		border: 2px solid #dbdbdb;
+		margin: 0;
+		outline: 0;
+		background: transparent;
+		box-shadow: none;
+		transition: border 0.2s ease 0s, background 0.2s ease 0s;
+	}
+
+	textarea{
+		height: 14.5rem;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+	input[type="password"]::placeholder,
+	input[type="text"]::placeholder,
+	input[type="number"]::placeholder,
+	input[type="email"]::placeholder,
+	textarea::placeholder{
+		color: #adadad;
+		opacity: 1;
+	}
+
+	input[type="password"]:focus,
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="email"]:focus,
+	textarea:focus{
+		border-color: #000;
+	}
+
+	&__item.error input[type="password"],
+	&__item.error input[type="text"],
+	&__item.error input[type="number"],
+	&__item.error input[type="email"],
+	&__item.error textarea{
+		border-color: #ff0000;
+	}
+
+	&__bottom{
+		display: flex;
+		align-items: center;
+		margin-top: 40px;
+	}
+
+	&__sect + &__bottom{margin-top: 0;}
+
+	&__link{
+		@include font(normal, normal, 1.5rem, 1.3, $color-grey);
+		text-decoration: none;
+		margin-left: 40px;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__link:hover{color: $color-text;}
+}
+
+.popup-form{
+	width: 770px;
+	max-width: 100%;
+}
+
+@media (max-width: 767px) {
+	.form-site{
+		&__item_half{width: calc(100% - 30px);}
+		&__title{font-size: 2.6rem;}
+	}
+}

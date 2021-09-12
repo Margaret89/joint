@@ -1,4 +1,4 @@
-import {$} from './common';
+import {$, Inputmask} from './common';
 
 // $(window).scroll(function(){
 // 	if($(this).scrollTop()>300){
@@ -65,5 +65,40 @@ if($('.js-sect-slider').length){
 				}
 			},
 		]
+	});
+}
+
+// Маска для телефона 
+Inputmask('+7 (999) 999-9999').mask('.js-phone');
+
+// Валидация форм
+function errorField(form, event) {
+	form.find('.js-form-site-item').removeClass('error');
+	
+	form.find('input[type=email]').each(function(){
+		var email = $(this).val();
+		var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
+
+		if (!pattern.test(email) && (email.length > 1)) {
+			$(this).closest('.js-form-site-item').addClass('error');
+		}
+	});
+
+
+	form.find('input,textarea,select').filter('[required]').each(function(){
+		if($(this).val().length < 1){
+			$(this).closest('.js-form-site-item').addClass('error');
+		}
+	});
+	
+	if(form.find('.js-form-site-item.error').length){
+		event.preventDefault();
+	}
+}
+
+if($('.js-valid-form').length){
+	$('.js-valid-form').on('click', '.js-btn-submit', function(e){
+		var $form = $(this).closest('form');
+		errorField($form, e);
 	});
 }

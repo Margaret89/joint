@@ -1,0 +1,107 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Вход в лк';
+
+block content
+	section.auth
+		.container
+			.row
+				.col-md-6.col-xl-4.offset-xl-1
+					h1 Войти в личный кабинет
+
+					.form-site.js-valid-form
+						form(method='get')
+							.form-site__fields
+								.form-site__item.js-form-site-item
+									.form-site__label Логин
+									input.js-phone(type='text', required='required')
+
+								.form-site__item.js-form-site-item
+									.form-site__label Пароль
+									input(type='password', required='required')
+
+							.form-site__bottom
+								button.btn.btn_border.js-btn-submit(type='submit') Войти
+								
+								a(href="#").form-site__link Забыли пароль?
+
+					
+					a.btn.btn_border(data-fancybox='' data-src='#partner-form' href='javascript:;') Хотите стать партнером?
+
+				.col-md-6.offset-xl-1.d-none.d-md-block
+					.auth__img
+						img(src="assets/img/auth.jpg", alt="")
+
+
+	#partner-form.popup-form(style='display: none;')
+		.h1 заполните следующие поля
+
+		.form-site.js-valid-form
+			form(method='get')
+				.form-site__sect
+					.form-site__title Контактные данные:
+
+					.form-site__fields
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label имя
+							input(type='text', required='required')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label Телефон
+							input.js-phone(type='text', required='required')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label Почта
+							input(type='email')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label город
+							input(type='text')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label Сайт
+							input(type='text')
+
+				.form-site__sect
+					.form-site__title Данные организации:
+
+					.form-site__fields
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label Наименование организации
+							input(type='text')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label ОГРН
+							input(type='email')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label ИНН
+							input(type='text')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label КПП
+							input(type='text')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label Юридический адрес
+							input(type='text')
+
+				.form-site__sect
+					.form-site__title Банковские реквизиты:
+
+					.form-site__fields
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label Расчетный счет
+							input(type='text')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label Банк
+							input(type='email')
+
+						.form-site__item.form-site__item_half.js-form-site-item
+							.form-site__label БИК
+							input(type='text')
+
+				.form-site__bottom
+					button.btn.btn_border.js-btn-submit(type='submit') Отправить заявку
