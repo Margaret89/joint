@@ -1,0 +1,79 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Каталог детальная';
+
+block content
+	section.catalog
+		.container
+			.row
+				.col-lg-3.col-xl-2
+					.filter
+						-
+							var list=[
+								{
+									title:'Выберите сезон',
+									sub:[
+										{text:'Сезон 19/20'},
+										{text:'Сезон 20/21', status:'active'},
+									]
+								},
+								{
+									title:'Выберите Бренд',
+									sub:[
+										{text:'Gloryfy'},
+										{text:'Oneskee', status:'active'},
+										{text:'Fix Binding'},
+										{text:'AirHole'},
+										{text:'Stance'},
+										{text:'686'},
+										{text:'Sorel'},
+									]
+								}
+							]
+						each item in list
+							.filter__sect
+								.filter__title= item.title
+
+								.filter__list
+									each sub in item.sub
+										.filter__item(class=sub.status?'active':'')
+											a(href="#").filter__link= sub.text
+
+				.col-lg-9.col-xl-10
+					.catalog-detail
+						.catalog-detail__img-wrap
+							.catalog-detail__img
+								img(src="assets/img/catalog-detail.jpg", alt="")
+
+							.catalog-detail__links
+								a(href="#").catalog-detail__link
+									.catalog-detail__link-icon
+									.catalog-detail__link-text Открыть в новом окне .pdf
+
+								a(href="#").catalog-detail__link
+									.catalog-detail__link-icon
+									.catalog-detail__link-text Скачать .pdf
+
+						.catalog-detail__content
+							h1 Зимняя одежда oneskee (сезон 20/21)
+
+							p Сеть спортивных специализированных магазинов КАНТ отличает от других высокий профессионализм продавцов-консультантов, прошедших специальное обучение и специально подготовленных к каждой коллекции нового сезона.
+
+
+					.album-list
+						.row
+							-
+								var list=[
+									{img:'album1.jpg', title:'Фотографии Life Style'},
+									{img:'album2.jpg', title:'Заказная форма'},
+									{img:'album3.jpg', title:'Фотографии для соцсетей'},
+								]
+							each item in list
+								.col-md-4
+									a(href="#").album-item
+										.album-item__content(style="background-image: url(assets/img/"+item.img+")")
+											.album-item__info
+												.album-item__title= item.title
+												.album-item__icon
+													+svg('ic-download','ic-download', '26', '26')
