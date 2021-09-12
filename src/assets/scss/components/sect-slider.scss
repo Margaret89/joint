@@ -1,0 +1,138 @@
+/*-------------- sect-slider -----------------*/
+.sect-slider{
+	display: none;
+	background: url(../img/figure1.png) no-repeat calc(50% - 600px) calc(100% - 35px);
+	padding-bottom: 100px;
+	margin: 52px 0 100px;
+
+	&.slick-initialized{display: block;}
+	.slick-track{display: flex;}
+
+	.slick-list{
+		padding-left: calc(50% - 600px);
+		padding-right: calc(50% - 600px);
+	}
+
+	.slick-slide{
+		height: auto;
+		margin: 8px 15px;
+		transition: opacity 0.2s ease 0s;
+	}
+
+	.slick-slide > div{height: 100%;}
+	.slick-slide[aria-hidden="true"]{opacity: 0.2;}
+
+	&__item{
+		height: 100%;
+		background: #000;
+	}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		min-height: 360px;
+		padding: 40px 40px 30px 40px;
+		text-decoration: none;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		position: relative;
+		transition: transform 0.2s ease 0s;
+	}
+
+	&__content::before{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__logo{
+		margin-bottom: 30px;
+		position: relative;
+	}
+
+	&__title{
+		font-family: $font-organetto;
+		@include font(normal, bold, 3.2rem, 1.2, $color-text);
+		position: relative;
+	}
+
+	&__item:hover &__content{transform: translate(-5px, -5px);}
+
+	.btn-arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 80px;
+		height: 46px;
+		background: transparent;
+		border: 2px solid $color-blue;
+		font-size: 0;
+		padding: 0;
+		box-shadow:  none;
+		position: absolute;
+		bottom: 0;
+		transition: background 0.2s ease 0s;
+		cursor: pointer;
+
+		&_left{left: calc(50% - 95px);}
+		&_right{right: calc(50% - 95px);}
+
+		.icon{
+			fill: $color-text;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	.btn-arr:hover{
+		background: $color-blue;
+		.icon{fill: #fff;}
+	}
+
+	.btn-arr.slick-disabled,
+	.btn-arr.slick-disabled:hover{
+		background: transparent;
+		opacity: 0.3;
+		cursor: auto;
+		.icon{fill: $color-text;}
+	}
+
+	.slick-dots{
+		display: flex;
+		position: absolute;
+		bottom: 15px;
+		right: calc(50% - 590px);
+
+		&,
+		li{
+			@include reset-list;
+		}
+
+		button{
+			display: block;
+			width: 8px;
+			height: 8px;
+			background: #dbdbdb;
+			border: 0;
+			border-radius: 50%;
+			font-size: 0;
+			padding: 0;
+			box-shadow:  none;
+			transition: background 0.2s ease 0s;
+			margin: 5px;
+			cursor: pointer;
+		}
+	}
+
+	.slick-active button,
+	.slick-dots button:hover{
+		background: $color-text;
+	}
+}

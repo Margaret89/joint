@@ -1,0 +1,93 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная';
+
+block content
+	section.sect-slider-wrap
+		.sect-slider.js-sect-slider
+			-
+				var list=[
+					{logo:'oneskee.png', text:'одежда oneskee', img:'sect1.jpg'},
+					{logo:'gloryfy.png', text:'очки gloryfy', img:'sect2.jpg'},
+					{logo:'fix.png', text:'fix binging', img:'sect3.jpg'},
+				]
+			each item in list
+				.sect-slider__item
+					a(href="#").sect-slider__content(style="background-image: url(assets/img/"+item.img+")")
+						.sect-slider__logo
+							img(src="assets/img/"+item.logo, alt="")
+			
+						.sect-slider__title= item.text
+
+	section.news-wrap
+		.container
+			.row
+				.col-8.offset-2
+					.title-line
+						.h1 Новости
+			
+			.row
+				.col-12
+					.news
+						-
+							var list=[
+								{img:'news1.jpg', day:'23', date:'26.21', text:'Качество и низкий вес снаряжения MSR', size:'big'},
+								{img:'news2.jpg', day:'5', date:'09.21', text:'Обновленные головные уборы Deuter Astro', size:'big'},
+								{img:'news3.jpg', day:'6', date:'17.21', text:'Классика outdoor-снаряжения от Silva'},
+								{img:'news4.jpg', day:'10', date:'02.21', text:'Новая коллекция рюкзаков Fjällräven'},
+							]
+						each item in list
+							.news-item
+								.news-item__content
+									a(href="#").news-item__img-wrap
+										.news-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+										.news-item__date-wrap
+											.news-item__day= item.day
+											.news-item__date= item.date
+
+									.news-item__info
+										.news-item__title
+											a(href="#")= item.text
+
+	section.about
+		.container
+			.row
+				.col-8.offset-2
+					.title-line
+						.h1 О нашей компании
+
+					p Группа компаний "КАНТ" включает одноименный спортивный комплекс, 20 спортивных магазинов, самую крупную дилерскую сеть в стране, горнолыжную школу "Нагорная", ресторан альпийской кухни "Шале", теннисные корты, тренажерный зал, батутный комплекс, пункт проката и сервис центр.
+
+			.about__img-wrap
+				.row
+					.col-6
+						.about__img
+							img(src="assets/img/about.jpg", alt="")
+
+					.col-4
+						br
+						p У КАНТа 20 спортивных магазинов, которые специализируются на 6 видах спорта: горные лыжи, сноуборд, беговые лыжи, туризм, роликовые коньки и велоспорт.
+			
+			.row
+				.col-8.offset-2
+					p Сеть спортивных специализированных магазинов КАНТ отличает от других высокий профессионализм продавцов-консультантов, прошедших специальное обучение и специально подготовленных к каждой коллекции нового сезона, возможность приобрести в одном месте полный ассортимент правильно подобранной экипировки и наличие в магазинах лучшего горнолыжного и сноубордического оборудования.
+
+					p За много лет работы мы собрали под своими знамёнами ведущих производителей спортивного инвентаря, что позволяет удовлетворить запросы любого потребителя различных видов спорта, туризма и отдыха. 
+
+					a.btn.btn_border(href='#') Подробнее о нас
+
+					.title-line
+						.h1 Как стать партнером
+
+					p Группа компаний "КАНТ" включает одноименный спортивный комплекс, 20 спортивных магазинов, самую крупную дилерскую сеть в стране, горнолыжную школу "Нагорная", ресторан альпийской кухни "Шале", теннисные корты, тренажерный зал, батутный комплекс, пункт проката и сервис центр. 
+
+			.row
+				.col-10.offset-2
+					.about__img-full
+						img(src="assets/img/about2.png", alt="")
+			
+			.row
+				.col-8.offset-2
+					p За много лет работы мы собрали под своими знамёнами ведущих производителей спортивного инвентаря, что позволяет удовлетворить запросы любого потребителя различных видов спорта, туризма и отдыха.
