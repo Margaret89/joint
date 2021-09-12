@@ -52,3 +52,15 @@
 }
 
 a.partners-slider__item:hover{opacity: 1;}
+
+@media (max-width: 1269px) {
+	.partners-slider{
+		margin-left: -15px;
+		margin-right: -15px;
+		
+		.btn-arr{
+			&_left{left: -15px;}
+			&_right{right: -15px;}
+		}
+	}
+}

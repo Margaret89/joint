@@ -16,30 +16,37 @@ if($('.js-partners-slider').length){
 		slidesToScroll: 1,
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left" width="22" height="18"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right" width="22" height="18"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
-		// // responsive: [
-		// 	{
-		// 		breakpoint: 992,
-		// 		settings: {
-		// 			slidesToShow: 2,
-		// 			slidesToScroll: 1,
-		// 			variableWidth: false,
-		// 			dots: false,
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 768,
-		// 		settings: {
-		// 			slidesToShow: 1,
-		// 			slidesToScroll: 1,
-		// 			variableWidth: false,
-		// 			dots: true,
-		// 		}
-		// 	},
-		// ]
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 6,
+					slidesToScroll: 1,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					infinite: false,
+					slidesToShow: 4.5,
+					slidesToScroll: 4,
+					arrows: false,
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					infinite: false,
+					slidesToShow: 3.5,
+					slidesToScroll: 3,
+					arrows: false,
+				}
+			},
+		]
 	});
 }
 
-// offer slider
+// Слайдер разделов
 if($('.js-sect-slider').length){
 	$('.js-sect-slider').slick({
 		slidesToShow: 2,
@@ -48,25 +55,15 @@ if($('.js-sect-slider').length){
 		infinite: false,
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left" width="22" height="18"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right" width="22" height="18"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
-		// responsive: [
-		// 	{
-		// 		breakpoint: 992,
-		// 		settings: {
-		// 			slidesToShow: 2,
-		// 			slidesToScroll: 1,
-		// 			variableWidth: false,
-		// 			dots: false,
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 768,
-		// 		settings: {
-		// 			slidesToShow: 1,
-		// 			slidesToScroll: 1,
-		// 			variableWidth: false,
-		// 			dots: true,
-		// 		}
-		// 	},
-		// ]
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+				}
+			},
+		]
 	});
 }

@@ -1,6 +1,6 @@
 /*-------------- about -----------------*/
 .about{
-	background: url(../img/snowboard.png) no-repeat calc(100% - 40px) 110px;
+	background: url(../img/snowboard.png) no-repeat 1400px 110px;
 	overflow: hidden;
 
 	.title-line{margin-bottom: 3.4rem;}
@@ -30,5 +30,34 @@
 		margin-right: -160px;
 		margin-top: -90px;
 		margin-bottom: 55px;
+	}
+}
+
+@media (max-width: 1269px) {
+	.about{background: none;}
+}
+
+@media (max-width: 991px) {
+	.about{
+		&__img::before{
+			width: 250px;
+			height: 174px;
+			bottom: -55px;
+			left: -100px;
+		}
+
+		&__img-full{margin-top: -25px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.about{
+		&__img-wrap{margin: 0;}
+		&__img{margin-bottom: 30px;}
+
+		&__img-full{
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
 	}
 }

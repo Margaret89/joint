@@ -8,7 +8,7 @@ header.header
 							a(href="#")
 								img(src="assets/img/logo.png", alt="")
 
-						a.btn.btn_border(href='#')
+						a.btn.btn_border.d-none.d-lg-inline-flex(href='#')
 							span Наш магазин
 							+svg('ic-arrow','ic-arrow', '15', '15')
 
@@ -26,6 +26,10 @@ header.header
 										a(href="#").top-menu__link= item.text
 
 
-					a.btn.btn_border(href='#')
-						+svg('ic-login','ic-login', '22', '19')
-						span Войти
+					.header__action
+						a.btn.btn_border(href='#')
+							+svg('ic-login','ic-login', '22', '19')
+							span Войти
+
+						span.ic-hamburger.js-open-menu.d-md-none
+							span

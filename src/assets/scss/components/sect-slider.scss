@@ -64,8 +64,6 @@
 		position: relative;
 	}
 
-	&__item:hover &__content{transform: translate(-5px, -5px);}
-
 	.btn-arr{
 		display: inline-flex;
 		align-items: center;
@@ -134,5 +132,54 @@
 	.slick-active button,
 	.slick-dots button:hover{
 		background: $color-text;
+	}
+}
+
+@media (max-width: 1269px) {
+	.sect-slider{
+		background-position: calc(50% - 480px) calc(100% - 35px);
+
+		.slick-list{
+			padding-left: calc(50% - 480px);
+			padding-right: calc(50% - 480px);
+		}
+
+		.slick-dots{right: calc(50% - 470px);}
+	}
+}
+
+@media (max-width: 991px) {
+	.sect-slider{
+		background-position: calc(50% - 360px) calc(100% - 35px);
+
+		.slick-list{
+			padding-left: calc(50% - 360px);
+			padding-right: calc(50% - 360px);
+		}
+
+		.slick-dots{right: calc(50% - 350px);}
+	}
+}
+
+@media (min-width: 768px) {
+	.sect-slider{
+		&__item:hover &__content{transform: translate(-5px, -5px);}
+	}
+}
+
+@media (max-width: 767px) {
+	.sect-slider{
+		background: none;
+		margin: 30px 0 50px;
+		padding-bottom: 0;
+
+		.slick-dots{
+			display: flex;
+			justify-content: center;
+			position: static;
+			padding: 0 15px;
+		}
+
+		&__content{padding: 15px;}
 	}
 }
