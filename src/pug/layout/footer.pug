@@ -1,14 +1,14 @@
 footer.footer
 	.container
 		.row
-			.col-6
+			.col-md-6
 				.footer__logo
 					a(href="#")
 						img(src="assets/img/logo-big.png", alt="")
 
-				.footer__copyright © Capital Dist, 2021
+				.footer__copyright.d-none.d-md-block © Capital Dist, 2021
 
-			.col-4
+			.col-md-4
 				ul.footer-menu
 					-
 						var list=[
@@ -20,3 +20,5 @@ footer.footer
 					each item in list
 						li.footer-menu__item(class=item.status?'active':'')
 							a(href="#").footer-menu__link= item.text
+
+				.footer__copyright.d-md-none © Capital Dist, 2021
