@@ -1,0 +1,42 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Личный кабинет';
+	- var h1 = 'Личный кабинет';
+
+block content
+	section.cabinet
+		.container
+			.row
+				.col-lg-3
+					nav.left-menu
+						ul.left-menu__list
+							-
+								var list=[
+									{text:'Личные данные', status:'active'},
+									{text:'Форма заказа'},
+									{text:'Добавить документы '},
+									{text:'История заказов и статусы'},
+									{text:'Выйти'},
+								]
+							each item in list
+								li.left-menu__item(class=item.status?'active':'')
+									a(href="#").left-menu__link= item.text
+				
+				.col-lg-9.col-xl-8
+					.form-site.js-valid-form
+						form(method='get')
+							.form-site__sect
+								.form-site__title Форма заказа
+
+								.form-site__fields
+									.form-site__item
+										.file-upload.js-file-upload
+											label.file-upload__content
+												input.js-input-file(type='file' name='file')
+												.file-upload__icon
+													+svg('ic-clip','ic-clip', '18', '18')
+
+												span.file-upload__name Прикрепить форму заказа
+
+											.file-upload__text.js-name-file

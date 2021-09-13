@@ -102,3 +102,15 @@ if($('.js-valid-form').length){
 		errorField($form, e);
 	});
 }
+
+// Кнопка загрузки файла
+$('.js-input-file').on('change', function(){
+	var f_name = [];
+
+	for (var i = 0; i < $(this).get(0).files.length; ++i) {
+		f_name.push(" " + $(this).get(0).files[i].name);
+	}
+	
+	$(this).closest('.js-file-upload').find('.js-name-file').html(f_name[0]);
+	$(this).closest('.js-file-upload').find('.js-name-file').attr("title", f_name[0])
+});
