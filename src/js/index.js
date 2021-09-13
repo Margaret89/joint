@@ -69,7 +69,7 @@ if($('.js-sect-slider').length){
 }
 
 // Маска для телефона 
-Inputmask('+7 (999) 999-9999').mask('.js-phone');
+Inputmask('+3 (999) 999-9999').mask('.js-phone');
 
 // Валидация форм
 function errorField(form, event) {

@@ -10,6 +10,7 @@
 	&__item{
 		width: calc(100% - 30px);
 		margin: 0 15px 26px;
+		position: relative;
 	}
 
 	&__item_half{width: calc(50% - 30px);}
@@ -27,6 +28,8 @@
 		text-transform: uppercase;
 		margin-bottom: 14px;
 	}
+
+	&__field{position: relative;}
 
 	input[type="password"],
 	input[type="text"],
@@ -71,12 +74,27 @@
 		border-color: #000;
 	}
 
+	input[type="password"]:focus + &__edit,
+	input[type="text"]:focus + &__edit,
+	input[type="number"]:focus + &__edit,
+	input[type="email"]:focus + &__edit,
+	textarea:focus + &__edit{
+		display: none;
+	}
+
 	&__item.error input[type="password"],
 	&__item.error input[type="text"],
 	&__item.error input[type="number"],
 	&__item.error input[type="email"],
 	&__item.error textarea{
 		border-color: #ff0000;
+	}
+	&__item_edit input[type="password"],
+	&__item_edit input[type="text"],
+	&__item_edit input[type="number"],
+	&__item_edit input[type="email"],
+	&__item_edit textarea{
+		padding-right: 105px;
 	}
 
 	&__bottom{
@@ -95,6 +113,31 @@
 	}
 
 	&__link:hover{color: $color-text;}
+
+	&__edit{
+		display: inline-flex;
+		align-items: center;
+		@include font(normal, normal, 1.3rem, 1.2, $color-grey);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+		position: absolute;
+		@include top-center;
+		right: 20px;
+		cursor: pointer;
+
+		.icon{
+			flex-shrink: 0;
+			width: 14px;
+			margin-right: 5px;
+			fill: $color-grey;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__edit:hover{
+		color: $color-text;
+		.icon{fill: $color-text;}
+	}
 }
 
 .popup-form{
@@ -106,5 +149,25 @@
 	.form-site{
 		&__item_half{width: calc(100% - 30px);}
 		&__title{font-size: 2.6rem;}
+
+		&__edit{
+
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			font-size: 0;
+			right: 0;
+
+			.icon{margin: 0;}
+		}
+
+		&__item_edit input[type="password"],
+		&__item_edit input[type="text"],
+		&__item_edit input[type="number"],
+		&__item_edit input[type="email"],
+		&__item_edit textarea{
+			padding-right: 40px;
+		}
 	}
 }
