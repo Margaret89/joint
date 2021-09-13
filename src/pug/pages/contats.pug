@@ -1,0 +1,35 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Контакты';
+	- var h1 = 'Контакты';
+
+block content
+	section.contact-list
+		.container
+			.row
+				.col-lg-6
+					.contact-item
+						.contact-item__content
+							.contact-item__info
+								.contact-item__title Время работы:
+								.contact-item__text
+									|Пн. - Пт. 10:00 — 19:00
+									br
+									|Сб. - Вс. — выходной
+							
+							.contact-item__icon
+								+svg('ic-clock','ic-clock', '60', '60')
+
+				.col-lg-6
+					.contact-item
+						.contact-item__content
+							.contact-item__info
+								.contact-item__title Телефон и почта:
+								.contact-item__text
+									|+7 (495) 540-54-28
+									br
+									|joint@info.com
+							
+							.contact-item__icon
+								+svg('ic-phone','ic-phone', '60', '60')
