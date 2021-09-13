@@ -1,0 +1,148 @@
+/*-------------- order -----------------*/
+.order{
+	width: 100%;
+
+	td,
+	th{
+		padding: 20px 15px;
+	}
+
+	td{vertical-align: middle;}
+
+	th{
+		@include font(normal, bold, 1.5rem, 1.6, $color-text);
+		text-transform: uppercase;
+		padding-top: 2px;
+		padding-bottom: 12px;
+	}
+
+	td:first-child,
+	th:first-child{
+		padding-left: 0;
+	}
+
+	td:last-child,
+	th:last-child{
+		padding-right: 0;
+		text-align: right;
+	}
+
+	tr:not(:last-child){border-bottom: 1px solid #ebebeb;}
+
+	&__info{
+		display: flex;
+		align-items: center;
+	}
+
+	&__img-wrap{
+		flex-shrink: 0;
+		width: 80px;
+		height: 80px;
+		position: relative;
+		text-decoration: none;
+		overflow: hidden;
+		margin-right: 20px;
+	}
+
+	&__img{
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: transform 0.2s ease 0s;
+	}
+
+	&__img-wrap:hover &__img{transform: translate(-50%, -50%) scale(1.05);}
+
+	&__title{
+		width: 200px;
+		@include font(normal, normal, 1.4rem, 1.55, $color-text);
+		margin-right: 20px;
+
+		a{
+			color: $color-text;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-blue;}
+	}
+
+	&__link{
+		@include font(normal, normal, 1.4rem, 1.55, $color-grey);
+		text-decoration: none;
+		margin-right: 40px;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__link:hover{color: $color-blue;}
+
+	&__status{
+		display: inline-flex;
+		align-items: center;
+		height: 3rem;
+		@include font(normal, normal, 1.4rem, 1.2, $color-text);
+		white-space: nowrap;
+		padding: 0 10px;
+		border-radius: 1.5rem;
+		background: #ebf8fa;
+
+		.icon{margin-left: 5px;}
+	}
+
+	&__status_pink{background: #faebfa;}
+	&__status_green{background: #f4faeb;}
+
+	&__download{
+		text-decoration: none;
+		.icon{
+			fill: $color-text;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__download:hover .icon{fill: $color-blue;}
+
+	&__desc{
+		display: flex;
+		align-items: center;
+	}
+
+	& + .pager{margin-top: 30px;}
+}
+
+@media (max-width: 1269px) {
+	.order{
+		&__link{margin-right: 0;}
+	}
+}
+
+@media (max-width: 767px) {
+	.order{
+		&,
+		tbody,
+		td{
+			display: block;
+		}
+
+		thead{display: none;}
+
+		tr{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 10px 0;
+		}
+
+		td{padding: 10px 0;}
+		td:first-child{width: 100%;}
+		&__desc{display: block;}
+		&__title{width: 100%;}
+
+	}
+}

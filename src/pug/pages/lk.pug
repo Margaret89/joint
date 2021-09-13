@@ -24,47 +24,46 @@ block content
 									a(href="#").left-menu__link= item.text
 				
 				.col-lg-9.col-xl-8
+					h2 Личные данные
+
 					.form-site.js-valid-form
 						form(method='get')
-							.form-site__sect
-								.form-site__title Личные данные
+							.form-site__fields
+								.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
+									.form-site__label имя
+									.form-site__field
+										input(type='text', required='required', value="Александр")
 
-								.form-site__fields
-									.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
-										.form-site__label имя
-										.form-site__field
-											input(type='text', required='required', value="Александр")
+										//- .form-site__edit
+										//- 	+svg('ic-edit','ic-edit', '14', '14')
+										//- 	|Изменить
 
-											//- .form-site__edit
-											//- 	+svg('ic-edit','ic-edit', '14', '14')
-											//- 	|Изменить
+								.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
+									.form-site__label Телефон
+									.form-site__field
+										input.js-phone(type='text', required='required', value="+3 809 328 90 93")
 
-									.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
-										.form-site__label Телефон
-										.form-site__field
-											input.js-phone(type='text', required='required', value="+3 809 328 90 93")
+										.form-site__edit
+											+svg('ic-edit','ic-edit', '14', '14')
+											|Изменить
 
-											.form-site__edit
-												+svg('ic-edit','ic-edit', '14', '14')
-												|Изменить
+								.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
+									.form-site__label Почта
+									.form-site__field
+										input(type='email', value="aleks009@gmail.com")
 
-									.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
-										.form-site__label Почта
-										.form-site__field
-											input(type='email', value="aleks009@gmail.com")
+										.form-site__edit
+											+svg('ic-edit','ic-edit', '14', '14')
+											|Изменить
 
-											.form-site__edit
-												+svg('ic-edit','ic-edit', '14', '14')
-												|Изменить
+								.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
+									.form-site__label Пароль
+									.form-site__field
+										input(type='password')
 
-									.form-site__item.form-site__item_half.form-site__item_edit.js-form-site-item
-										.form-site__label Пароль
-										.form-site__field
-											input(type='password')
+										.form-site__edit
+											+svg('ic-edit','ic-edit', '14', '14')
+											|Изменить
 
-											.form-site__edit
-												+svg('ic-edit','ic-edit', '14', '14')
-												|Изменить
-
-							.form-site__bottom
-								button.btn.btn_border.js-btn-submit(type='submit') Применить изменения
+						.form-site__bottom
+							button.btn.btn_border.js-btn-submit(type='submit') Применить изменения
