@@ -53,7 +53,23 @@ block content
 												a(href="#").order__link Cкачать бланк заказа
 									
 									td
-										.order__status(class=item.status?'order__status_'+item.status_color:'')= item.status
+										.order__status(class=item.status?'order__status_'+item.status_color:'')
+											span= item.status
+											+svg('ic-view','ic-view', '20', '14')
+
+											.order-data-wrap
+												.order-data
+													.order-data__item
+														.order-data__label Кем ожидается:
+														.order-data__text Иван Иванович Иванов
+
+													.order-data__item
+														.order-data__label Трек номер:
+														.order-data__text 938567348565687
+
+													.order-data__item
+														.order-data__label Дата доставки:
+														.order-data__text 12 марта 2021
 										
 									td
 										a(href="#").order__download
